@@ -121,11 +121,11 @@ export default function Home() {
             className="draggable hidden lg:flex relative group items-center justify-center">
 
             <Iphone15Pro
-              className="lg:h-[800px] group-hover:drop-shadow-sm absolute transition-all"
+              className="lg:h-[600px] group-hover:drop-shadow-sm absolute transition-all"
               src={iphoneImage2.src}
             />
             <Iphone15Pro
-              className="w-screen lg:w-fit pointer-events-none lg:pointer-events-auto lg:h-[800px] translate-y-[70%] lg:translate-y-0 drop-shadow-sm absolute transition-all"
+              className="w-screen lg:w-fit pointer-events-none lg:pointer-events-auto lg:h-[600px] translate-y-[70%] lg:translate-y-0 drop-shadow-sm absolute transition-all"
               src={iphoneImage.src}
             />
           </button>
