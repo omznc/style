@@ -45,7 +45,7 @@ export default function Home() {
             </Draggable>
           </div>
           <Draggable>
-            <div className="draggable flex gap-2 p-4 cursor-grab active:cursor-grabbing">
+            <div className="draggable hidden lg:flex gap-2 p-4 cursor-grab active:cursor-grabbing">
               <Link
                 href="https://apps.apple.com/hu/app/style-a-szem%C3%A9lyes-stylist/id6581490950">
 
@@ -67,6 +67,27 @@ export default function Home() {
               </Link>
             </div>
           </Draggable>
+          <div className="draggable lg:hidden flex gap-2 p-4 cursor-grab active:cursor-grabbing">
+            <Link
+              href="https://apps.apple.com/hu/app/style-a-szem%C3%A9lyes-stylist/id6581490950">
+
+              <Image
+                src={appleImage}
+                alt="apple"
+                width={200}
+                height={200}
+              />
+            </Link>
+            <Link
+              href="https://play.google.com/store/apps/details?id=hu.thestyleapp.app">
+              <Image
+                src={googleImage}
+                alt="google"
+                width={200}
+                height={200}
+              />
+            </Link>
+          </div>
           <Draggable>
             <span className="font-sans draggable text-left cursor-grab active:cursor-grabbing px-4 text-md w-full lg:w-[500px] text-balance">
               Csak fotózd le a ruháid, és az AI azonnal
