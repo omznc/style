@@ -20,8 +20,30 @@ export default function Home() {
     console.log('Created by https://omarzunic.com');
   }, []);
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1
+    }
+  };
+
   return (
-    <div className="flex flex-col gap-2 w-full items-center" key={key}>
+    <div
+      className="flex flex-col gap-2 w-full items-center"
+      key={key}
+    >
       <DotPattern
         width={20}
         height={20}
@@ -38,14 +60,41 @@ export default function Home() {
                 Style
               </h1>
             </Draggable>
+          </div>
+          <div>
             <Draggable>
               <span className="draggable text-left font-sans cursor-grab active:cursor-grabbing px-4 text-xl">
                 Find your perfect look with the help of Style.
               </span>
             </Draggable>
           </div>
-          <Draggable>
-            <div className="draggable hidden lg:flex gap-2 p-4 cursor-grab active:cursor-grabbing">
+          <div>
+            <Draggable>
+              <div className="draggable hidden lg:flex gap-2 p-4 cursor-grab active:cursor-grabbing">
+                <Link
+                  href="https://apps.apple.com/hu/app/style-a-szem%C3%A9lyes-stylist/id6581490950">
+
+                  <Image
+                    src={appleImage}
+                    alt="apple"
+                    width={200}
+                    height={200}
+                  />
+                </Link>
+                <Link
+                  href="https://play.google.com/store/apps/details?id=hu.thestyleapp.app">
+                  <Image
+                    src={googleImage}
+                    alt="google"
+                    width={200}
+                    height={200}
+                  />
+                </Link>
+              </div>
+            </Draggable>
+          </div>
+          <div>
+            <div className="draggable lg:hidden flex gap-2 p-4 cursor-grab active:cursor-grabbing">
               <Link
                 href="https://apps.apple.com/hu/app/style-a-szem%C3%A9lyes-stylist/id6581490950">
 
@@ -66,36 +115,25 @@ export default function Home() {
                 />
               </Link>
             </div>
-          </Draggable>
-          <div className="draggable lg:hidden flex gap-2 p-4 cursor-grab active:cursor-grabbing">
-            <Link
-              href="https://apps.apple.com/hu/app/style-a-szem%C3%A9lyes-stylist/id6581490950">
-
-              <Image
-                src={appleImage}
-                alt="apple"
-                width={200}
-                height={200}
-              />
-            </Link>
-            <Link
-              href="https://play.google.com/store/apps/details?id=hu.thestyleapp.app">
-              <Image
-                src={googleImage}
-                alt="google"
-                width={200}
-                height={200}
-              />
-            </Link>
           </div>
-          <Draggable>
-            <span className="font-sans draggable text-left cursor-grab active:cursor-grabbing px-4 text-md w-full lg:w-[500px] text-balance">
-              Csak fotózd le a ruháid, és az AI azonnal
-              stílusos outfit-javaslatokat generál az ízlésedhez igazítva.
-              Legyen szó munkáról, buliról vagy hétköznapi inspirációról, a Style mindig segít.
-            </span>
-          </Draggable>
-
+          <div>
+            <Draggable>
+              <span className="font-sans draggable text-left cursor-grab active:cursor-grabbing px-4 text-md w-full lg:w-[500px] text-balance">
+                Csak fotózd le a ruháid, és az AI azonnal
+                stílusos outfit-javaslatokat generál az ízlésedhez igazítva.
+                Legyen szó munkáról, buliról vagy hétköznapi inspirációról, a Style mindig segít.
+              </span>
+            </Draggable>
+          </div>
+          <div className="z-10">
+            <Draggable>
+              <Link href="/outfit" className="px-4">
+                <Button className="text-lg">
+                  Generate Outfit
+                </Button>
+              </Link>
+            </Draggable>
+          </div>
         </div>
         <Draggable>
           <button
@@ -136,6 +174,6 @@ export default function Home() {
             setKey(key + 1);
           }}>hey</Button>
       </div >
-    </div >
+    </div>
   );
 }
