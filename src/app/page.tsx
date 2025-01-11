@@ -61,40 +61,13 @@ export default function Home() {
               </h1>
             </Draggable>
           </div>
-          <div>
-            <Draggable>
-              <span className="draggable text-left font-sans cursor-grab active:cursor-grabbing px-4 text-xl">
-                Find your perfect look with the help of Style.
-              </span>
-            </Draggable>
-          </div>
-          <div>
-            <Draggable>
-              <div className="draggable hidden lg:flex gap-2 p-4 cursor-grab active:cursor-grabbing">
-                <Link
-                  href="https://apps.apple.com/hu/app/style-a-szem%C3%A9lyes-stylist/id6581490950">
-
-                  <Image
-                    src={appleImage}
-                    alt="apple"
-                    width={200}
-                    height={200}
-                  />
-                </Link>
-                <Link
-                  href="https://play.google.com/store/apps/details?id=hu.thestyleapp.app">
-                  <Image
-                    src={googleImage}
-                    alt="google"
-                    width={200}
-                    height={200}
-                  />
-                </Link>
-              </div>
-            </Draggable>
-          </div>
-          <div>
-            <div className="draggable lg:hidden flex gap-2 p-4 cursor-grab active:cursor-grabbing">
+          <Draggable>
+            <span className="draggable text-left font-sans cursor-grab active:cursor-grabbing px-4 text-xl">
+              Find your perfect look with the help of Style.
+            </span>
+          </Draggable>
+          <Draggable>
+            <div className="draggable hidden lg:flex gap-2 p-4 cursor-grab active:cursor-grabbing">
               <Link
                 href="https://apps.apple.com/hu/app/style-a-szem%C3%A9lyes-stylist/id6581490950">
 
@@ -115,16 +88,35 @@ export default function Home() {
                 />
               </Link>
             </div>
+          </Draggable>
+          <div className="draggable lg:hidden flex gap-2 p-4 cursor-grab active:cursor-grabbing">
+            <Link
+              href="https://apps.apple.com/hu/app/style-a-szem%C3%A9lyes-stylist/id6581490950">
+
+              <Image
+                src={appleImage}
+                alt="apple"
+                width={200}
+                height={200}
+              />
+            </Link>
+            <Link
+              href="https://play.google.com/store/apps/details?id=hu.thestyleapp.app">
+              <Image
+                src={googleImage}
+                alt="google"
+                width={200}
+                height={200}
+              />
+            </Link>
           </div>
-          <div>
-            <Draggable>
-              <span className="font-sans draggable text-left cursor-grab active:cursor-grabbing px-4 text-md w-full lg:w-[500px] text-balance">
-                Csak fotózd le a ruháid, és az AI azonnal
-                stílusos outfit-javaslatokat generál az ízlésedhez igazítva.
-                Legyen szó munkáról, buliról vagy hétköznapi inspirációról, a Style mindig segít.
-              </span>
-            </Draggable>
-          </div>
+          <Draggable>
+            <span className="font-sans max-w-[300px] draggable text-left cursor-grab active:cursor-grabbing px-4 text-md w-full lg:w-[500px] text-balance">
+              Csak fotózd le a ruháid, és az AI azonnal
+              stílusos outfit-javaslatokat generál az ízlésedhez igazítva.
+              Legyen szó munkáról, buliról vagy hétköznapi inspirációról, a Style mindig segít.
+            </span>
+          </Draggable>
           <div className="z-10">
             <Draggable>
               <Link href="/outfit" className="px-4">
@@ -147,7 +139,7 @@ export default function Home() {
             onMouseLeave={e => {
               const children = e.currentTarget.children;
               if (children.length !== 2) return;
-              (children[0] as any)[0].style.transform = "";
+              (children[0] as any).style.transform = "";
               (children[1] as any).style.transform = "";
             }}
             onClick={e => {
