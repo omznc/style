@@ -121,7 +121,7 @@ export default function Home() {
             <Draggable>
               <Link href="/outfit" className="px-4">
                 <Button className="text-lg">
-                  Generate Outfit
+                  Outfit generálása
                 </Button>
               </Link>
             </Draggable>
